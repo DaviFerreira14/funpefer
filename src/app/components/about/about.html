@@ -1,0 +1,120 @@
+<div class="about-container">
+  <!-- Header Section -->
+  <section class="hero-section" data-scroll-reveal="fade-up">
+    <div class="container">
+      <div class="hero-content">
+        <img src="logo-nobg.png" [alt]="translate('about.hero.logoAlt')" class="hero-logo">
+        <h1 class="hero-title">{{ translate('about.hero.title') }}</h1>
+        <P class="hero-text">{{ translate('about.hero.subtitle') }}</P>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="main-content">
+    <div class="container">
+      <div class="content-wrapper">
+        
+        <!-- Introdução -->
+        <div class="text-image-block">
+          <div class="text-content">
+            <p class="intro-text">
+              {{ translate('about.introduction.welcome') }}
+            </p>
+            <p>
+              {{ translate('about.introduction.history') }}
+            </p>
+          </div>
+          <div class="image-content">
+            <img src="periclesfernandes.jpg" [alt]="translate('about.introduction.imageAlt')" class="content-image">
+            <p class="image-caption">{{ translate('about.introduction.imageCaption') }}</p>
+          </div>
+        </div>
+
+        <!-- História -->
+        <div class="text-image-block reverse">
+          <div class="image-content">
+            <img src="estudo.png" [alt]="translate('about.story.imageAlt')" class="content-image">
+          </div>
+          <div class="text-content">
+            <p>
+              {{ translate('about.story.arrival') }}
+            </p>
+            <p>
+              {{ translate('about.story.decision') }}
+            </p>
+          </div>
+        </div>
+
+        <!-- A Escola -->
+        <div class="text-image-block">
+          <div class="text-content">
+            <p>
+              {{ translate('about.school.inauguration') }}
+            </p>
+            <p>
+              {{ translate('about.school.leadership') }}
+            </p>
+          </div>
+          <div class="image-content">
+            <img src="estudo2.png" [alt]="translate('about.school.imageAlt')" class="content-image">
+          </div>
+        </div>
+
+        <!-- Projetos Sociais -->
+        <div class="text-image-block reverse">
+          <div class="image-content">
+            <img src="evento2.jpg" [alt]="translate('about.projects.imageAlt')" class="content-image">
+          </div>
+          <div class="text-content">
+            <ul class="projects-list">
+              <li>{{ translate('about.projects.basicBaskets') }}</li>
+              <li>{{ translate('about.projects.inssSupport') }}</li>
+              <li>{{ translate('about.projects.healthTransport') }}</li>
+              <li>{{ translate('about.projects.sportsGroups') }}</li>
+              <li>{{ translate('about.projects.culturalEvents') }}</li>
+              <li>{{ translate('about.projects.courses') }}</li>
+              <li>{{ translate('about.projects.daycare') }}</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Creche e Alimentação -->
+        <div class="text-image-block">
+          <div class="text-content">
+            <p>
+              {{ translate('about.philosophy.freire') }}
+            </p>
+            <p>
+              {{ translate('about.philosophy.dream') }}
+            </p>
+          </div>
+          <div class="image-content">
+            <img src="alimentação.png" [alt]="translate('about.philosophy.imageAlt')" class="content-image">
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="text-image-block reverse">
+          <div class="image-content">
+            <img src="evento3.png" [alt]="translate('about.callToAction.imageAlt')" class="content-image">
+          </div>
+          <div class="text-content">
+            <p>
+              {{ translate('about.callToAction.invitation') }}
+            </p>
+            <p class="signature-text">
+              <strong>{{ translate('about.callToAction.thanks') }}</strong>
+            </p>
+            <div class="signature">
+              <p class="signature-name">{{ translate('about.signature.name') }}</p>
+              <p class="signature-title">{{ translate('about.signature.title') }}</p>
+              <p class="cnpj">{{ translate('about.signature.cnpj') }}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>

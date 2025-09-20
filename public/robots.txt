@@ -1,0 +1,47 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://funpefer.org/sitemap.xml
+
+# Crawl-delay (opcional, para evitar sobrecarga do servidor)
+Crawl-delay: 1
+
+# Permitir acesso a todas as páginas principais
+Allow: /sobre
+Allow: /acao
+Allow: /contato
+Allow: /en/
+Allow: /en/about
+Allow: /en/action
+Allow: /en/contact
+Allow: /es/
+Allow: /es/about
+Allow: /es/action
+Allow: /es/contact
+
+# Permitir acesso aos assets importantes
+Allow: /logo-nobg.png
+Allow: /favicon.ico
+Allow: /manifest.webmanifest
+
+# Bloquear arquivos desnecessários para SEO
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /.angular/
+Disallow: /.git/
+
+# Informações adicionais para bots específicos
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /

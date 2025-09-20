@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 24">
+  <rect width="36" height="24" fill="#c60b1e"/>
+  <rect width="36" height="8" fill="#ffc400" y="8"/>
+  <!-- Simplified coat of arms -->
+  <circle cx="12" cy="12" r="2" fill="#ffc400" stroke="#c60b1e" stroke-width="0.5"/>
+</svg>

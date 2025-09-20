@@ -1,0 +1,172 @@
+<div class="home-page">
+  <!-- Hero Section with Video -->
+  <section class="hero-section" data-scroll-reveal>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 class="hero-title">{{ translate('home.hero.title') }}</h1>
+          <p class="hero-subtitle">{{ translate('home.hero.subtitle') }}</p>
+          <div class="hero-buttons">
+            <a [href]="getAboutUrl()" class="btn btn-primary">{{ translate('home.hero.knowHistory') }}</a>
+          <a [href]="getActionUrl()" class="btn btn-outline">{{ translate('home.hero.seeActions') }}</a>
+          </div>
+        </div>
+        <div class="hero-video">
+          <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/2HrkKV4K_Hg?autoplay=0&mute=1&controls=1&showinfo=0&rel=0" 
+              [title]="translate('home.hero.videoTitle')"
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission Section -->
+  <section class="mission-section" data-scroll-reveal>
+    <div class="container">
+      <div class="mission-content">
+        <div class="mission-text">
+          <h2 class="section-title">{{ translate('home.mission.title') }}</h2>
+          <p class="mission-description">
+            {{ translate('home.mission.description') }}
+          </p>
+          <div class="mission-stats">
+            <div class="stat-item">
+              <span class="stat-number">25+</span>
+              <span class="stat-label">{{ translate('home.mission.years') }}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">1000+</span>
+              <span class="stat-label">{{ translate('home.mission.beneficiaries') }}</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">{{ translate('home.mission.projects') }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="mission-image">
+          <img src="equipe.png" alt="Equipe da Fundação" class="mission-img" loading="lazy" width="400" height="300">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities Showcase -->
+  <section class="activities-showcase" data-scroll-reveal>
+    <div class="container">
+      <h2 class="section-title text-center">{{ translate('home.activities.title') }}</h2>
+      <div class="activities-grid">
+        <div class="activity-showcase-card" data-scroll-reveal>
+          <div class="activity-image-container">
+            <img src="capoeira.jpg" [alt]="translate('home.activities.capoeira')" class="activity-showcase-img" loading="lazy" width="300" height="200">
+            <div class="activity-overlay">
+              <h3>{{ translate('home.activities.capoeira') }}</h3>
+              <p>{{ translate('home.activities.capoeiraDesc') }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="activity-showcase-card" data-scroll-reveal>
+          <div class="activity-image-container">
+            <img src="teatro8.png" [alt]="translate('home.activities.theater')" class="activity-showcase-img" loading="lazy" width="300" height="200">
+            <div class="activity-overlay">
+              <h3>{{ translate('home.activities.theater') }}</h3>
+              <p>{{ translate('home.activities.theaterDesc') }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="activity-showcase-card" data-scroll-reveal>
+          <div class="activity-image-container">
+            <img src="tocando.jpg" [alt]="translate('home.activities.music')" class="activity-showcase-img" loading="lazy" width="300" height="200">
+            <div class="activity-overlay">
+              <h3>{{ translate('home.activities.music') }}</h3>
+              <p>{{ translate('home.activities.musicDesc') }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="activity-showcase-card" data-scroll-reveal>
+          <div class="activity-image-container">
+            <img src="alimentação.png" [alt]="translate('home.activities.food')" class="activity-showcase-img" loading="lazy" width="300" height="200">
+            <div class="activity-overlay">
+              <h3>{{ translate('home.activities.food') }}</h3>
+              <p>{{ translate('home.activities.foodDesc') }}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="activity-showcase-card" data-scroll-reveal>
+          <div class="activity-image-container">
+            <img src="estudo.png" alt="Educação" class="activity-showcase-img" loading="lazy" width="300" height="200">
+            <div class="activity-overlay">
+              <h3>Educação</h3>
+              <p>Conhecimento que liberta e transforma</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="activity-showcase-card" data-scroll-reveal>
+          <div class="activity-image-container">
+            <img src="agricultura.png" alt="Agricultura" class="activity-showcase-img" loading="lazy" width="300" height="200">
+            <div class="activity-overlay">
+              <h3>Agricultura</h3>
+              <p>Sustentabilidade e conexão com a terra</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="text-center mt-5">
+        <a [href]="getActionUrl()" class="btn btn-primary btn-lg">Ver Todas as Atividades</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Section -->
+  <section class="impact-section" data-scroll-reveal>
+    <div class="container">
+      <div class="impact-content">
+        <div class="impact-image">
+          <img src="evento.jpg" alt="Evento da Fundação" class="impact-img">
+        </div>
+        <div class="impact-text">
+          <h2 class="section-title">{{ translate('home.impact.title') }}</h2>
+          <p class="impact-description">
+            {{ translate('home.impact.description') }}
+          </p>
+          <ul class="impact-list">
+            <li>{{ translate('home.impact.education') }}</li>
+            <li>{{ translate('home.impact.culture') }}</li>
+            <li>{{ translate('home.impact.citizenship') }}</li>
+            <li>{{ translate('home.impact.opportunities') }}</li>
+            <li>Eventos comunitários e integração social</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section" data-scroll-reveal>
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">{{ translate('home.cta.title') }}</h2>
+        <p class="cta-description">
+          {{ translate('home.cta.description') }}
+        </p>
+        <div class="cta-buttons">
+          <a [href]="getContactUrl()" class="btn btn-primary btn-lg">{{ translate('action.cta.contact') }}</a>
+          <a [href]="getAboutUrl()" class="btn btn-outline btn-lg">{{ translate('action.cta.learnMore') }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

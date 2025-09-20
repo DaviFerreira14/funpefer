@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Página inicial (português - padrão) -->
+  <url>
+    <loc>https://funpefer.org/</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://funpefer.org/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://funpefer.org/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://funpefer.org/es" />
+  </url>
+  
+  <!-- Sobre (português) -->
+  <url>
+    <loc>https://funpefer.org/sobre</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://funpefer.org/sobre" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://funpefer.org/en/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://funpefer.org/es/about" />
+  </url>
+  
+  <!-- Ação (português) -->
+  <url>
+    <loc>https://funpefer.org/acao</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://funpefer.org/acao" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://funpefer.org/en/action" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://funpefer.org/es/action" />
+  </url>
+  
+  <!-- Contato (português) -->
+  <url>
+    <loc>https://funpefer.org/contato</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://funpefer.org/contato" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://funpefer.org/en/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://funpefer.org/es/contact" />
+  </url>
+  
+  <!-- Páginas em inglês -->
+  <url>
+    <loc>https://funpefer.org/en</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://funpefer.org/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://funpefer.org/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://funpefer.org/es" />
+  </url>
+  
+  <url>
+    <loc>https://funpefer.org/en/about</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://funpefer.org/sobre" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://funpefer.org/en/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://funpefer.org/es/about" />
+  </url>
+  
+  <url>
+    <loc>https://funpefer.org/en/action</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://funpefer.org/acao" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://funpefer.org/en/action" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://funpefer.org/es/action" />
+  </url>
+  
+  <url>
+    <loc>https://funpefer.org/en/contact</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://funpefer.org/contato" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://funpefer.org/en/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://funpefer.org/es/contact" />
+  </url>
+  
+  <!-- Páginas em espanhol -->
+  <url>
+    <loc>https://funpefer.org/es</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://funpefer.org/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://funpefer.org/en" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://funpefer.org/es" />
+  </url>
+  
+  <url>
+    <loc>https://funpefer.org/es/about</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://funpefer.org/sobre" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://funpefer.org/en/about" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://funpefer.org/es/about" />
+  </url>
+  
+  <url>
+    <loc>https://funpefer.org/es/action</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://funpefer.org/acao" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://funpefer.org/en/action" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://funpefer.org/es/action" />
+  </url>
+  
+  <url>
+    <loc>https://funpefer.org/es/contact</loc>
+    <lastmod>2024-01-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://funpefer.org/contato" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://funpefer.org/en/contact" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://funpefer.org/es/contact" />
+  </url>
+</urlset>

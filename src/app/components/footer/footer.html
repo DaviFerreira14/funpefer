@@ -1,0 +1,37 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h5>{{ translate('footer.foundation.name') }}</h5>
+        <p>{{ translate('footer.foundation.motto') }}</p>
+      </div>
+      <div class="col-md-4">
+        <h5>{{ translate('footer.quickLinks.title') }}</h5>
+        <ul class="list-unstyled">
+          <li><a [routerLink]="getHomeUrl()">{{ translate('footer.quickLinks.home') }}</a></li>
+          <li><a [routerLink]="getAboutUrl()">{{ translate('footer.quickLinks.about') }}</a></li>
+          <li><a [routerLink]="getActionUrl()">{{ translate('footer.quickLinks.action') }}</a></li>
+          <li><a [routerLink]="getContactUrl()">{{ translate('footer.quickLinks.contact') }}</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>{{ translate('footer.contact.title') }}</h5>
+        <address>
+          <p><i class="bi bi-geo-alt"></i> {{ translate('footer.contact.address') }}</p>
+          <p><i class="bi bi-telephone"></i> {{ translate('footer.contact.phone') }}</p>
+          <p><i class="bi bi-envelope"></i> {{ translate('footer.contact.email') }}</p>
+        </address>
+        <div class="social-icons">
+          <a href="https://www.youtube.com/@fundacaopericlesfernandes3711" target="_blank"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <p>{{ translate('footer.developedBy') }} <a href="https://www.linkedin.com/in/davi-ferreira99/" target="_blank"><strong>Davi Ferreira</strong></a></p>
+        <p>&copy; {{ currentYear }} {{ translate('footer.copyright') }}</p>
+      </div>
+    </div>
+  </div>
+</footer>

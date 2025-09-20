@@ -1,0 +1,142 @@
+<!-- Header Section -->
+<div class="contact-header">
+  <div class="container">
+    <h1 class="contact-title">{{ translate('contact.title').toUpperCase() }}</h1>
+    <p class="contact-subtitle">{{ translate('contact.subtitle') }}</p>
+  </div>
+</div>
+
+<!-- Contact Form Section -->
+<div class="contact-form-section">
+  <div class="container">
+    <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="contact-form">
+      
+      <!-- Name Fields Row -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="firstName">{{ translate('contact.firstName') }} *</label>
+          <input 
+            type="text" 
+            id="firstName" 
+            name="firstName"
+            [(ngModel)]="formData.firstName"
+            required
+            class="form-control">
+          <span class="field-label">{{ translate('contact.firstName') }}</span>
+        </div>
+        
+        <div class="form-group">
+          <label for="lastName">{{ translate('contact.lastName') }} *</label>
+          <input 
+            type="text" 
+            id="lastName" 
+            name="lastName"
+            [(ngModel)]="formData.lastName"
+            required
+            class="form-control">
+          <span class="field-label">{{ translate('contact.lastName') }}</span>
+        </div>
+      </div>
+
+      <!-- Email Field -->
+      <div class="form-group full-width">
+        <label for="email">{{ translate('contact.email') }} *</label>
+        <input 
+          type="email" 
+          id="email" 
+          name="email"
+          [(ngModel)]="formData.email"
+          required
+          class="form-control">
+      </div>
+
+      <!-- Phone Fields Row -->
+      <div class="form-row phone-row">
+        <div class="form-group phone-group">
+          <label for="phone">{{ translate('contact.phoneNumber') }}</label>
+          <div class="phone-inputs">
+            <input 
+              type="text" 
+              id="phoneArea" 
+              name="phoneArea"
+              [(ngModel)]="formData.phoneArea"
+              maxlength="3"
+              placeholder="(11)"
+              class="form-control phone-area">
+            <span class="phone-separator">-</span>
+            <input 
+              type="text" 
+              id="phoneNumber" 
+              name="phoneNumber"
+              [(ngModel)]="formData.phoneNumber"
+              maxlength="9"
+              placeholder="99999-9999"
+              class="form-control phone-number">
+          </div>
+          <div class="phone-labels">
+            <span class="field-label">{{ translate('contact.phoneArea') }}</span>
+            <span class="field-label">{{ translate('contact.phoneNumber') }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Topic Dropdown -->
+      <div class="form-group full-width">
+        <label for="topic">{{ translate('contact.topic') }} *</label>
+        <select 
+          id="topic" 
+          name="topic"
+          [(ngModel)]="formData.topic"
+          required
+          class="form-control">
+          <option *ngFor="let option of topicOptions" [value]="option.value">
+            {{ option.label }}
+          </option>
+        </select>
+      </div>
+
+      <!-- How did you find us -->
+      <div class="form-group full-width">
+        <label for="howFound">{{ translate('contact.howFound') }}</label>
+        <select 
+          id="howFound" 
+          name="howFound"
+          [(ngModel)]="formData.howDidYouFind"
+          class="form-control">
+          <option *ngFor="let option of howFoundOptions" [value]="option.value">
+            {{ option.label }}
+          </option>
+        </select>
+        <span class="field-label">{{ translate('contact.howFound') }}</span>
+      </div>
+
+      <!-- Message/Feedback -->
+      <div class="form-group full-width">
+        <label for="message">{{ translate('contact.message') }} *</label>
+        <textarea 
+          id="message" 
+          name="message"
+          [(ngModel)]="formData.message"
+          required
+          rows="6"
+          maxlength="3000"
+          class="form-control"
+          [placeholder]="translate('contact.messagePlaceholder')"></textarea>
+        <div class="character-count">
+          <span>{{ translate('contact.charactersRemaining') }}: {{ 3000 - (formData.message.length || 0) }}</span>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="form-group submit-group">
+        <button 
+          type="submit" 
+          class="btn-submit"
+          [disabled]="!isFormValid()">
+          {{ translate('contact.submit') }}
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>

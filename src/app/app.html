@@ -1,0 +1,25 @@
+
+<app-navbar></app-navbar>
+
+<!-- Fixed Donate Button -->
+<div class="fixed-donate-btn">
+  <div class="donate-btn-container" (click)="openDonationModal()">
+    <img src="/coracao.png" alt="Botão de Doação" class="donate-btn-image">
+    <span class="donate-btn-text">{{ translate('donate.button') }}</span>
+  </div>
+</div>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
+
+<!-- WhatsApp Float Button -->
+<app-whatsapp-float></app-whatsapp-float>
+
+<!-- Donation Modal -->
+<app-donation-modal 
+  [isVisible]="isDonationModalVisible" 
+  (close)="closeDonationModal()">
+</app-donation-modal>
+
+<app-footer></app-footer>

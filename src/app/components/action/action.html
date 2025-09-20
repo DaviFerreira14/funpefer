@@ -1,0 +1,101 @@
+<div class="actions-page">
+  <!-- Hero Section -->
+  <section class="hero-section" data-scroll-reveal>
+    <div class="container">
+      <div class="hero-content">
+        <h1 class="hero-title">{{ translate('action.hero.title') }}</h1>
+        <p class="hero-subtitle">{{ translate('action.hero.subtitle') }}</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities Section -->
+  <section class="activities-section">
+    <div class="container">
+      <div class="activities-grid">
+        <div 
+          class="activity-card" 
+          *ngFor="let activity of activities; let i = index"
+          [attr.data-scroll-reveal]="true"
+        >
+          <div class="activity-content">
+            <h3 class="activity-title">{{ translate(activity.titleKey) }}</h3>
+        <p class="activity-description">{{ translate(activity.descriptionKey) }}</p>
+            
+            <!-- Carousel for multiple images -->
+            <div *ngIf="activity.type === 'carousel'" class="carousel-container">
+              <div class="carousel-wrapper">
+                <div class="carousel-slides" [style.transform]="'translateX(-' + (currentSlides['activity-' + i] * 100) + '%)'">
+                  <div 
+                    class="carousel-slide" 
+                    *ngFor="let image of activity.images"
+                  >
+                    <img 
+                      [src]="'/' + image" 
+                      [alt]="translate(activity.titleKey)"
+                      class="activity-image"
+                      loading="lazy"
+                    >
+                  </div>
+                </div>
+                
+                <!-- Navigation buttons (Hidden) -->
+                <!-- <button 
+                  class="carousel-btn prev-btn"
+                  (click)="prevSlide('activity-' + i, activity.images.length)"
+                  [attr.aria-label]="translate('action.carousel.previous') + ' ' + translate(activity.titleKey)"
+                >
+                  <i class="bi bi-chevron-left"></i>
+                </button>
+                <button 
+                  class="carousel-btn next-btn"
+                  (click)="nextSlide('activity-' + i, activity.images.length)"
+                  [attr.aria-label]="translate('action.carousel.next') + ' ' + translate(activity.titleKey)"
+                >
+                  <i class="bi bi-chevron-right"></i>
+                </button> -->
+                
+                <!-- Indicators -->
+                <div class="carousel-indicators">
+                  <button
+                    *ngFor="let image of activity.images; let j = index"
+                    class="carousel-indicator"
+                    [class.active]="currentSlides['activity-' + i] === j"
+                    (click)="goToSlide('activity-' + i, j)"
+                    [attr.aria-label]="translate('action.carousel.goTo') + ' ' + (j + 1) + ' ' + translate('action.carousel.of') + ' ' + translate(activity.titleKey)"
+                  ></button>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Single image -->
+            <div *ngIf="activity.type === 'single'" class="single-image-container">
+              <img 
+                [src]="'/' + activity.images[0]" 
+                [alt]="translate(activity.titleKey)"
+                class="activity-image single-image"
+                loading="lazy"
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section" data-scroll-reveal>
+    <div class="container">
+      <div class="cta-content">
+        <h2 class="cta-title">{{ translate('action.cta.title') }}</h2>
+        <p class="cta-description">
+          {{ translate('action.cta.description') }}
+        </p>
+        <div class="cta-buttons">
+          <a [href]="getContactUrl()" class="btn btn-primary">{{ translate('action.cta.contact') }}</a>
+          <a [href]="getAboutUrl()" class="btn btn-outline">{{ translate('action.cta.learnMore') }}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

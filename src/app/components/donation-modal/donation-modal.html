@@ -1,0 +1,105 @@
+<!-- Donation Modal -->
+<div class="modal-overlay" *ngIf="isVisible" (click)="closeModal()">
+  <div class="modal-container" (click)="$event.stopPropagation()">
+    <!-- Close Button -->
+    <button class="modal-close" (click)="closeModal()">
+      <i class="bi bi-x"></i>
+    </button>
+    
+    <!-- Modal Header -->
+    <div class="modal-header">
+      <h2 class="modal-title">{{ translate('donate.modal.title') }}</h2>
+      <p class="modal-subtitle">{{ translate('donate.modal.subtitle') }}</p>
+    </div>
+    
+    <!-- Modal Content -->
+    <div class="modal-content">
+      <div class="donation-info">
+        
+        <!-- Left Column: PIX Section -->
+        <div class="left-column">
+          <!-- PIX Section -->
+          <div class="pix-section">
+            <h3 class="pix-title">
+              <i class="bi bi-qr-code"></i>
+              {{ translate('donate.modal.pixTitle') }}
+            </h3>
+            
+            <div class="pix-info">
+              <div class="pix-key">
+                <label>{{ translate('donate.modal.pixKey') }}:</label>
+                <div class="pix-key-container">
+                  <span class="pix-key-value">{{ pixKey }}</span>
+                  <button class="copy-btn" (click)="copyPixKey()">
+                    <i class="bi bi-clipboard"></i>
+                    {{ copyMessage }}
+                  </button>
+                </div>
+              </div>
+              
+              <div class="beneficiary-info">
+                <p><strong>{{ translate('donate.modal.beneficiary') }}:</strong> Fundação Péricles Fernandes</p>
+                <p><strong>CNPJ:</strong>00.854.769/0001-77</p>
+                <p><strong>{{ translate('donate.modal.bank') }}:</strong> Pag Bank (290)</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Contact Section -->
+          <div class="contact-section">
+            <h4 style="color: #333; margin-bottom: 15px; text-align: center;">
+              <i class="bi bi-envelope-heart" style="color: #ff6b6b; margin-right: 8px;"></i>
+              {{ translate('donate.modal.contactTitle') }}
+            </h4>
+            <p class="contact-text">
+              <i class="bi bi-telephone"></i>
+              <span>(71) 98878-2294</span>
+            </p>
+            <p class="contact-text">
+              <i class="bi bi-envelope"></i>
+              <a href="mailto:contato@fundacaopericlesfernandes.org">contato@fundacaopericlesfernandes.org</a>
+            </p>
+            <p class="contact-text">
+              <i class="bi bi-geo-alt"></i>
+              <span>Rua das Flores, 123 - Salvador, BA</span>
+            </p>
+          </div>
+        </div>
+        
+        <!-- Right Column: QR Code Section -->
+        <div class="right-column">
+          <div class="qr-section">
+            <h3 class="qr-title">{{ translate('donate.modal.qrTitle') }}</h3>
+            <div class="qr-code-container">
+              <div class="qr-code-placeholder">
+                <img src="/images/qr-code-pix.svg" alt="QR Code PIX" class="qr-code" width="220" height="220">
+              </div>
+              <p class="qr-instruction">
+                {{ translate('donate.modal.qrInstruction') }}
+              </p>
+            </div>
+          </div>
+          
+          <!-- Vaquinha Online Section -->
+          <div class="vaquinha-section">
+            <h4 style="color: #333; margin-bottom: 15px; text-align: center;">
+              <i class="bi bi-heart-fill" style="color: #ff6b6b; margin-right: 8px;"></i>
+              {{ translate('donate.modal.vaquinhaTitle') }}
+            </h4>
+            <p class="vaquinha-description">
+              {{ translate('donate.modal.vaquinhaDescription') }}
+            </p>
+            <div class="vaquinha-button-container">
+              <a href="https://www.kickante.com.br/vaquinha-online/cuide-de-quem-ja-cuidou-tanto-de-nos-apoie-essa-causa" 
+                 target="_blank" 
+                 class="vaquinha-btn">
+                <i class="bi bi-globe"></i>
+                {{ translate('donate.modal.vaquinhaButton') }}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

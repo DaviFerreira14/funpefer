@@ -1,0 +1,96 @@
+<nav class="navbar navbar-expand-lg fixed-top" [class.scrolled]="isScrolled">
+  <div class="container-fluid px-4">
+    <!-- Logo -->
+    <a class="navbar-brand" routerLink="/">
+      <img src="/logo-nobg.png" alt="Fundação Péricles Fernandes" class="logo-img">
+      <span class="brand-text">Fundação Péricles Fernandes</span>
+    </a>
+
+    <!-- Mobile toggle button -->
+    <button 
+      class="navbar-toggler" 
+      type="button" 
+      (click)="toggleNavbar()"
+      [attr.aria-expanded]="!isNavbarCollapsed"
+      aria-controls="navbarNav"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation menu -->
+    <div class="collapse navbar-collapse" id="navbarNav" [class.show]="!isNavbarCollapsed">
+      <ul class="navbar-nav ms-auto align-items-center">
+        <li class="nav-item">
+          <a class="nav-link" 
+             [routerLink]="currentLanguage === 'pt' ? '/' : '/' + currentLanguage" 
+             routerLinkActive="active" 
+             [routerLinkActiveOptions]="{exact: true}">
+            <span class="nav-text">{{ translate('navbar.home') }}</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [routerLink]="currentLanguage === 'pt' ? '/sobre' : '/' + currentLanguage + '/about'" 
+             routerLinkActive="active">
+            <span class="nav-text">{{ translate('navbar.about') }}</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [routerLink]="currentLanguage === 'pt' ? '/acao' : '/' + currentLanguage + '/action'" 
+             routerLinkActive="active">
+            <span class="nav-text">{{ translate('navbar.action') }}</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" 
+             [routerLink]="currentLanguage === 'pt' ? '/contato' : '/' + currentLanguage + '/contact'" 
+             routerLinkActive="active">
+            <span class="nav-text">{{ translate('navbar.contact') }}</span>
+          </a>
+        </li>
+        
+        <!-- Language Selector -->
+        <li class="nav-item dropdown ms-3">
+          <div ngbDropdown class="language-dropdown">
+            <button 
+              class="btn btn-outline-light dropdown-toggle language-btn" 
+              ngbDropdownToggle 
+              id="languageDropdown">
+              <img [src]="getCurrentFlag()" [alt]="currentLanguage" class="flag-icon">
+              {{ getCurrentLanguageLabel() }}
+            </button>
+            <div ngbDropdownMenu aria-labelledby="languageDropdown" class="language-menu">
+              <button 
+                ngbDropdownItem 
+                (click)="changeLanguage('pt')"
+                [class.active]="currentLanguage === 'pt'">
+                <img src="/flags/brazil.svg" alt="Português" class="flag-icon me-2">
+                Português
+              </button>
+              <button 
+                ngbDropdownItem 
+                (click)="changeLanguage('en')"
+                [class.active]="currentLanguage === 'en'">
+                <img src="/flags/usa.svg" alt="English" class="flag-icon me-2">
+                English
+              </button>
+              <button 
+                ngbDropdownItem 
+                (click)="changeLanguage('es')"
+                [class.active]="currentLanguage === 'es'">
+                <img src="/flags/spain.svg" alt="Español" class="flag-icon me-2">
+                Español
+              </button>
+            </div>
+          </div>
+        </li>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Spacer to prevent content from hiding behind fixed navbar -->
+<div class="navbar-spacer"></div>
