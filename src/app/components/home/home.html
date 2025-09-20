@@ -105,27 +105,27 @@
         
         <div class="activity-showcase-card" data-scroll-reveal>
           <div class="activity-image-container">
-            <img src="estudo.png" alt="Educação" class="activity-showcase-img" loading="lazy" width="300" height="200">
+            <img src="estudo.png" [alt]="translate('home.activities.education')" class="activity-showcase-img" loading="lazy" width="300" height="200">
             <div class="activity-overlay">
-              <h3>Educação</h3>
-              <p>Conhecimento que liberta e transforma</p>
+              <h3>{{ translate('home.activities.education') }}</h3>
+              <p>{{ translate('home.activities.educationDesc') }}</p>
             </div>
           </div>
         </div>
-        
+
         <div class="activity-showcase-card" data-scroll-reveal>
           <div class="activity-image-container">
-            <img src="agricultura.png" alt="Agricultura" class="activity-showcase-img" loading="lazy" width="300" height="200">
+            <img src="agricultura.png" [alt]="translate('home.activities.agriculture')" class="activity-showcase-img" loading="lazy" width="300" height="200">
             <div class="activity-overlay">
-              <h3>Agricultura</h3>
-              <p>Sustentabilidade e conexão com a terra</p>
+              <h3>{{ translate('home.activities.agriculture') }}</h3>
+              <p>{{ translate('home.activities.agricultureDesc') }}</p>
             </div>
           </div>
         </div>
       </div>
       
       <div class="text-center mt-5">
-        <a [href]="getActionUrl()" class="btn btn-primary btn-lg">Ver Todas as Atividades</a>
+        <a [href]="getActionUrl()" class="btn btn-primary btn-lg">{{ translate('home.activities.seeAll') }}</a>
       </div>
     </div>
   </section>
@@ -143,12 +143,12 @@
             {{ translate('home.impact.description') }}
           </p>
           <ul class="impact-list">
-            <li>{{ translate('home.impact.education') }}</li>
-            <li>{{ translate('home.impact.culture') }}</li>
-            <li>{{ translate('home.impact.citizenship') }}</li>
-            <li>{{ translate('home.impact.opportunities') }}</li>
-            <li>Eventos comunitários e integração social</li>
-          </ul>
+              <li>{{ translate('home.impact.education') }}</li>
+              <li>{{ translate('home.impact.culture') }}</li>
+              <li>{{ translate('home.impact.citizenship') }}</li>
+              <li>{{ translate('home.impact.opportunities') }}</li>
+              <li>{{ translate('home.impact.communityEvents') }}</li>
+            </ul>
         </div>
       </div>
     </div>
