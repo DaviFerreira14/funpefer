@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { I18nService } from '../../services/i18n.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-contact',
@@ -9,7 +10,7 @@ import { I18nService } from '../../services/i18n.service';
   templateUrl: './contact.html',
   styleUrls: ['./contact.css']
 })
-export class ContactComponent {
+export class ContactComponent implements OnInit, OnDestroy {
   formData = {
     firstName: '',
     lastName: '',
@@ -24,29 +25,49 @@ export class ContactComponent {
   messageCharCount = 0;
   maxMessageLength = 500;
 
+  currentLanguage = 'pt';
+  topicOptions: { value: string; label: string }[] = [];
+  howFoundOptions: { value: string; label: string }[] = [];
+  private langSub?: Subscription;
+
   constructor(private i18nService: I18nService) { }
 
-  get topicOptions() {
-    return [
-      { value: '', label: this.translate('contact.topicPlaceholder') },
-      { value: 'general', label: this.translate('contact.topicGeneral') },
-      { value: 'partnership', label: this.translate('contact.topicPartnership') },
-      { value: 'donation', label: this.translate('contact.topicDonation') },
-      { value: 'volunteer', label: this.translate('contact.topicVolunteer') },
-      { value: 'media', label: this.translate('contact.topicMedia') },
-      { value: 'other', label: this.translate('contact.topicOther') }
+  ngOnInit() {
+    this.currentLanguage = this.i18nService.getCurrentLanguage();
+    this.buildTopicOptions();
+    this.buildHowFoundOptions();
+    this.langSub = this.i18nService.currentLanguage$.subscribe(lang => {
+      this.currentLanguage = lang;
+      this.buildTopicOptions();
+      this.buildHowFoundOptions();
+    });
+  }
+
+  ngOnDestroy() {
+    this.langSub?.unsubscribe();
+  }
+
+  private buildTopicOptions() {
+    this.topicOptions = [
+      { value: '', label: this.translate('contact.topic.select') },
+      { value: 'general', label: this.translate('contact.topic.general') },
+      { value: 'donation', label: this.translate('contact.topic.donation') },
+      { value: 'volunteer', label: this.translate('contact.topic.volunteer') },
+      { value: 'partnerships', label: this.translate('contact.topic.partnerships') },
+      { value: 'events', label: this.translate('contact.topic.events') },
+      { value: 'others', label: this.translate('contact.topic.others') }
     ];
   }
 
-  get howFoundOptions() {
-    return [
-      { value: '', label: this.translate('contact.howFound') },
-      { value: 'search', label: this.translate('contact.howFoundSearch') },
-      { value: 'social', label: this.translate('contact.howFoundSocial') },
-      { value: 'referral', label: this.translate('contact.howFoundReferral') },
-      { value: 'news', label: this.translate('contact.howFoundNews') },
-      { value: 'event', label: this.translate('contact.howFoundEvent') },
-      { value: 'other', label: this.translate('contact.howFoundOther') }
+  private buildHowFoundOptions() {
+    this.howFoundOptions = [
+      { value: '', label: this.translate('contact.howFound.select') },
+      { value: 'google', label: this.translate('contact.howFound.google') },
+      { value: 'facebook', label: this.translate('contact.howFound.facebook') },
+      { value: 'instagram', label: this.translate('contact.howFound.instagram') },
+      { value: 'friends', label: this.translate('contact.howFound.friends') },
+      { value: 'events', label: this.translate('contact.howFound.events') },
+      { value: 'others', label: this.translate('contact.howFound.others') }
     ];
   }
 

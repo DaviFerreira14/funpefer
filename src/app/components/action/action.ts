@@ -120,7 +120,7 @@ export class ActionComponent implements OnInit, AfterViewInit, OnDestroy {
     {
       titleKey: 'activities.music.title',
       descriptionKey: 'activities.music.description',
-      images: ['Banda.jpg', 'banda2.png'],
+      images: ['Banda.jpg'],
       type: 'carousel'
     },
     {

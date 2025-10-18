@@ -14,7 +14,7 @@ export class DonationModalComponent {
   @Output() close = new EventEmitter<void>();
   
   copyMessage: string = '';
-  pixKey: string = '85.476.900/0001-77';
+  pixKey: string = '00.854.769/0001-77';
 
   constructor(private i18nService: I18nService) {
     this.copyMessage = this.translate('donate.modal.copyButton');

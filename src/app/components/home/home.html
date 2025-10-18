@@ -14,13 +14,16 @@
         </div>
         <div class="hero-video">
           <div class="video-container">
-            <iframe 
-              src="https://www.youtube.com/embed/2HrkKV4K_Hg?autoplay=0&mute=1&controls=1&showinfo=0&rel=0" 
-              [title]="translate('home.hero.videoTitle')"
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowfullscreen>
-            </iframe>
+            <video 
+              [attr.aria-label]="translate('home.hero.videoTitle')"
+              controls
+              playsinline
+              preload="metadata"
+              class="hero-video-element"
+              controlsList="nodownload">
+              <source src="/videodafundacao.mp4" type="video/mp4">
+              Seu navegador não suporta o elemento de vídeo.
+            </video>
           </div>
         </div>
       </div>

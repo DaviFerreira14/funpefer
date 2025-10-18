@@ -288,3 +288,9 @@
     padding: 1.5rem 0;
   }
 }
+
+.content-image.pericles-image {
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+}
