@@ -21,26 +21,20 @@
           <!-- PIX Section -->
           <div class="pix-section">
             <h3 class="pix-title">
-              <i class="bi bi-qr-code"></i>
-              {{ translate('donate.modal.pixTitle') }}
+              <i class="bi bi-globe"></i>
+              Conta internacional
             </h3>
-            
             <div class="pix-info">
-              <div class="pix-key">
-                <label>{{ translate('donate.modal.pixKey') }}:</label>
-                <div class="pix-key-container">
-                  <span class="pix-key-value">{{ pixKey }}</span>
-                  <button class="copy-btn" (click)="copyPixKey()">
-                    <i class="bi bi-clipboard"></i>
-                    {{ copyMessage }}
-                  </button>
-                </div>
-              </div>
-              
               <div class="beneficiary-info">
-                <p><strong>{{ translate('donate.modal.beneficiary') }}</strong> Fundação Péricles Fernandes</p>
-                <p><strong>CNPJ:</strong>00.854.769/0001-77</p>
-                <p><strong>{{ translate('donate.modal.bank') }}</strong> Pag Bank (290)</p>
+                <p><strong>Euro</strong></p>
+                <p><strong>IBAN:</strong> LT31 3250 0453 5276 5059</p>
+                <p><strong>BIC:</strong> REVOLT21</p>
+                <hr>
+                <p><strong>Dólar</strong></p>
+                <p><strong>Número da conta:</strong> 6171390484</p>
+                <p><strong>BIC:</strong> REVOSGS2</p>
+                <hr>
+                <p><strong>Beneficiário:</strong> Péricles Fernandes</p>
               </div>
             </div>
           </div>
@@ -68,15 +62,24 @@
         
         <!-- Right Column: QR Code Section -->
         <div class="right-column">
+          <!-- Payment QR Code -->
           <div class="qr-section">
-            <h3 class="qr-title">{{ translate('donate.modal.qrTitle') }}</h3>
+            <h3 class="qr-title">QR Code para pagamento</h3>
             <div class="qr-code-container">
               <div class="qr-code-placeholder">
-                <img src="/images/qr-code-pix.svg" alt="QR Code PIX" class="qr-code" width="220" height="220">
+                <img src="/qrcode.jpg" alt="QR Code para pagamento" class="qr-code" width="220" height="220">
               </div>
-              <p class="qr-instruction">
-                {{ translate('donate.modal.qrInstruction') }}
-              </p>
+              <p class="qr-instruction">Escaneie o QR code para realizar o pagamento.</p>
+            </div>
+          </div>
+          <div class="qr-section">
+            <h3 class="qr-title">Conta brasileira</h3>
+            <div class="qr-code-container">
+              <div class="beneficiary-info">
+                <p><strong>Agência:</strong> 1</p>
+                <p><strong>C/C:</strong> 19433395</p>
+                <p><strong>Beneficiário:</strong> Péricles Fernandes Silva</p>
+              </div>
             </div>
           </div>
           
