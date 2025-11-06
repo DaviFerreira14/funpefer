@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { emailConfig } from './email.config';
+// With Angular/TS moduleResolution "bundler", local imports must use .js extension
+import { emailConfig } from './email.config.js';
 
 export interface ContactPayload {
   firstName: string;
