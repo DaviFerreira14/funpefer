@@ -1,4 +1,4 @@
 export const emailConfig = {
   endpoint: '',
-  to: ''
+  to: 'contato@funpefer.org'
 };
