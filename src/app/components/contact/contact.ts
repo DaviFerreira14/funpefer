@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { I18nService } from '../../services/i18n.service';
 import { Subscription } from 'rxjs';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
@@ -30,6 +31,16 @@ export class ContactComponent implements OnInit, OnDestroy {
   howFoundOptions: { value: string; label: string }[] = [];
   private langSub?: Subscription;
 
+  // Modal state
+  isConfirmModalVisible = false;
+  confirmStatus: 'sending' | 'success' | 'error' = 'sending';
+  confirmMessage = '';
+
+  // EmailJS configuration (prod)
+  private EMAILJS_PUBLIC_KEY = 'QOG2An5SdnmIPF7En';
+  private EMAILJS_SERVICE_ID = 'service_ei46cas';
+  private EMAILJS_TEMPLATE_ID = 'template_pp8wabe';
+
   constructor(private i18nService: I18nService) { }
 
   ngOnInit() {
@@ -41,6 +52,9 @@ export class ContactComponent implements OnInit, OnDestroy {
       this.buildTopicOptions();
       this.buildHowFoundOptions();
     });
+
+    // Initialize EmailJS
+    emailjs.init(this.EMAILJS_PUBLIC_KEY);
   }
 
   ngOnDestroy() {
@@ -76,14 +90,33 @@ export class ContactComponent implements OnInit, OnDestroy {
   }
 
   onSubmit() {
-    if (this.isFormValid()) {
-      console.log('Form submitted:', this.formData);
-      // Here you would typically send the data to a service
-      alert('Mensagem enviada com sucesso!');
-      this.resetForm();
-    } else {
-      alert('Por favor, preencha todos os campos obrigatórios.');
+    if (!this.isFormValid()) {
+      this.showConfirm('error', 'Por favor, preencha todos os campos obrigatórios.');
+      return;
     }
+
+    this.showConfirm('sending', 'Enviando sua mensagem...');
+
+    const templateParams = {
+      to_email: 'contato@funpefer.org',
+      from_name: `${this.formData.firstName} ${this.formData.lastName}`.trim(),
+      from_email: this.formData.email,
+      phone: `${this.formData.phoneArea || ''} ${this.formData.phoneNumber || ''}`.trim(),
+      topic: this.formData.topic,
+      how_found: this.formData.howDidYouFind,
+      message: this.formData.message,
+      locale: this.currentLanguage
+    };
+
+    emailjs.send(this.EMAILJS_SERVICE_ID, this.EMAILJS_TEMPLATE_ID, templateParams)
+      .then(() => {
+        this.showConfirm('success', 'Mensagem enviada com sucesso!');
+        this.resetForm();
+      })
+      .catch((err) => {
+        console.error('EmailJS error', err);
+        this.showConfirm('error', 'Ocorreu um erro ao enviar. Tente novamente mais tarde.');
+      });
   }
 
   isFormValid(): boolean {
@@ -115,5 +148,15 @@ export class ContactComponent implements OnInit, OnDestroy {
       message: ''
     };
     this.messageCharCount = 0;
+  }
+
+  showConfirm(status: 'sending' | 'success' | 'error', message: string) {
+    this.confirmStatus = status;
+    this.confirmMessage = message;
+    this.isConfirmModalVisible = true;
+  }
+
+  closeConfirmModal() {
+    this.isConfirmModalVisible = false;
   }
 }

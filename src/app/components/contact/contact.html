@@ -6,6 +6,39 @@
   </div>
 </div>
 
+<!-- Confirmation Modal -->
+<div class="confirm-modal-backdrop" *ngIf="isConfirmModalVisible" (click)="closeConfirmModal()"></div>
+<div class="confirm-modal" *ngIf="isConfirmModalVisible" role="dialog" aria-modal="true">
+  <div class="confirm-modal-header">
+    <div class="status-icon" [ngClass]="{
+      'sending': confirmStatus === 'sending',
+      'success': confirmStatus === 'success',
+      'error': confirmStatus === 'error'
+    }"></div>
+    <h3 class="confirm-title">
+      {{
+        confirmStatus === 'sending' ? (currentLanguage === 'pt' ? 'Enviando...' : 'Sending...') :
+        confirmStatus === 'success' ? (currentLanguage === 'pt' ? 'Mensagem enviada!' : 'Message sent!') :
+        (currentLanguage === 'pt' ? 'Algo deu errado' : 'Something went wrong')
+      }}
+    </h3>
+    <button class="close-btn" (click)="closeConfirmModal()" aria-label="Close">×</button>
+  </div>
+  <div class="confirm-modal-body">
+    <p class="confirm-text">{{ confirmMessage }}</p>
+    <div *ngIf="confirmStatus === 'sending'" class="spinner"></div>
+    <div *ngIf="confirmStatus === 'success'" class="success-note">
+      {{ currentLanguage === 'pt' ? 'Obrigado por entrar em contato! Responderemos em breve.' : 'Thanks for reaching out! We will reply soon.' }}
+    </div>
+    <div *ngIf="confirmStatus === 'error'" class="error-note">
+      {{ currentLanguage === 'pt' ? 'Verifique sua conexão ou tente novamente.' : 'Check your connection or try again.' }}
+    </div>
+  </div>
+  <div class="confirm-modal-footer">
+    <button class="btn" (click)="closeConfirmModal()">{{ currentLanguage === 'pt' ? 'Fechar' : 'Close' }}</button>
+  </div>
+</div>
+
 <!-- Contact Form Section -->
 <div class="contact-form-section">
   <div class="container">
