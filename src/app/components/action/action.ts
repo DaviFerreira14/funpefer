@@ -78,19 +78,19 @@ export class ActionComponent implements OnInit, AfterViewInit, OnDestroy {
     {
       titleKey: 'activities.capoeira.title',
       descriptionKey: 'activities.capoeira.description',
-      images: ['capoeira.jpg', 'capoeira.png', 'capoeira2.png', 'capoeira4.png', 'capoeira5.png', 'capoeira6.png', 'capoeira7.png', 'capoeira8.png', 'capoeira9.png'],
+      images: ['capoeira2.png', 'capoeira4.png', 'capoeira5.png', 'capoeira6.png', 'capoeira7.png', 'capoeira8.png', 'capoeira9.png'],
       type: 'carousel'
     },
     {
       titleKey: 'activities.theater.title',
       descriptionKey: 'activities.theater.description',
-      images: ['teatro.png', 'teatro2.png', 'teatro3.png', 'teatro4.png', 'teatro5.png', 'teatro6.png', 'teatro7.png', 'teatro8.png'],
+      images: ['teatro.png', 'teatro2.png', 'teatro3.png', 'teatro4.png', 'teatro5.png', 'teatro6.png', 'teatro7.png'],
       type: 'carousel'
     },
     {
       titleKey: 'activities.cavalgada.title',
       descriptionKey: 'activities.cavalgada.description',
-      images: ['cavalgada.png', 'cavalgada2.png', 'cavalgada3.png'],
+      images: ['cavalgada.png', 'cavalgada2.png'],
       type: 'carousel'
     },
     {
@@ -114,7 +114,7 @@ export class ActionComponent implements OnInit, AfterViewInit, OnDestroy {
     {
       titleKey: 'activities.events.title',
       descriptionKey: 'activities.events.description',
-      images: ['evento.jpg', 'evento2.jpg', 'evento3.png'],
+      images: ['evento3.png'],
       type: 'carousel'
     },
     {
