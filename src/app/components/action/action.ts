@@ -118,12 +118,6 @@ export class ActionComponent implements OnInit, AfterViewInit, OnDestroy {
       type: 'carousel'
     },
     {
-      titleKey: 'activities.music.title',
-      descriptionKey: 'activities.music.description',
-      images: ['Banda.jpg'],
-      type: 'carousel'
-    },
-    {
       titleKey: 'activities.crafts.title',
       descriptionKey: 'activities.crafts.description',
       images: ['artesanato.png'],
@@ -169,12 +163,6 @@ export class ActionComponent implements OnInit, AfterViewInit, OnDestroy {
       titleKey: 'activities.knitting.title',
       descriptionKey: 'activities.knitting.description',
       images: ['trico.png'],
-      type: 'single'
-    },
-    {
-      titleKey: 'activities.liveMusic.title',
-      descriptionKey: 'activities.liveMusic.description',
-      images: ['tocando.jpg'],
       type: 'single'
     },
     {
