@@ -25,9 +25,9 @@ Allow: /logo-nobg.png
 Allow: /favicon.ico
 Allow: /manifest.webmanifest
 
-# Bloquear arquivos desnecessários para SEO
-Disallow: /*.js$
-Disallow: /*.css$
+# Permitir recursos para renderização correta de páginas
+# (Bots precisam acessar JS/CSS para entender o layout)
+# Removido bloqueio de JS/CSS
 Disallow: /node_modules/
 Disallow: /src/
 Disallow: /.angular/
